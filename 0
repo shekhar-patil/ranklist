@@ -1,0 +1,2 @@
+      invoke  active_record
+    conflict    db/migrate/20171224122129_create_lists.rb

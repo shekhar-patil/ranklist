@@ -1,0 +1,139 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Your Website Title" />
+    <meta property="og:description"   content="Your description" />
+    <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+
+</head>
+
+<body>
+<div class = "header">
+    <span>RankList</span>
+
+</div>
+
+<center>
+
+<h1>
+<%= @post.postText %>
+</h1>
+
+<p>
+<strong>category:</strong>
+<%= @post.category %>
+</p>
+
+<div class="container">
+
+    <%= render :partial => 'show' ,:locals => {:@list1 => @list1}%>
+</div>
+<center><button id="load-more" class ="btn btn-outline-success" >load-more</button></center>
+
+
+<p>
+ 
+<h2>Add a comment:</h2>
+
+<form>
+  <br>
+  <input type="text" id="Username" placeholder="Anonymous">
+  <br>
+  <input type="text" id="comment" placeholder="Comment">
+  <br><br>
+  <button id="comment1"> Submit</button>
+</form> 
+
+
+
+<h2>Comments</h2>
+<div class="comment12">
+    <%= render :partial => 'comments/comment' ,:locals => {:@comments => @comments}%>
+</div>
+
+</center>
+
+<script>
+var last_id = 5
+var id = <%= @post.id%>
+$(document).on("turbolinks:load",function(){
+    $('button').click(function (e) {
+        e.preventDefault();
+        var m = $(this).attr("id");
+
+        if( m == "load-more"){
+            
+            last_id = last_id + 2;
+
+            console.log(last_id)
+            $.ajax({
+                type: "GET",
+                url: $(this).attr('href'),
+                data: {
+                    value: last_id
+                },
+                
+                dataType: "script"
+            });  
+        }
+
+
+        if(m != "load-more" && m != "comment1"){
+
+            var k = $(this).parent().attr("id")
+
+            if(k == "upvote"){
+                
+                var ajax_path = <%= @post.id%>+"/lists/"+this.id+"/upvote"
+                var property = document.getElementById(($(this).attr("id")));
+                property.style.color = "blue";
+            }
+            if(k == "downvote"){
+                var ajax_path = <%= @post.id%>+"/lists/"+this.id+"/downvote"
+                var property = document.getElementById(($(this).attr("id")));
+                property.style.color = "red";
+            }
+            
+            $.ajax({
+                url: ajax_path,  
+                method:"POST",
+                data: { },
+                async: true,
+                dataType: 'script'
+
+            });
+        }
+        
+        if(m == "comment1"){
+
+            var commenter = document.getElementById('Username').value
+            var body = document.getElementById('comment').value
+            var ajax_path = <%= @post.id%>+"/comments"
+            $.ajax({
+                type: "POST",
+                url: ajax_path,
+              
+                dataType: "script",
+                data:{
+                    comment:{
+                        "commenter": commenter,
+                        "body":body
+                    }
+                    
+                }
+
+            });
+
+        }
+    });
+
+
+
+});
+
+
+</script>
+

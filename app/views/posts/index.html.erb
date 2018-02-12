@@ -1,0 +1,40 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	
+	<div class = "header">
+	    <span>RankList</span>
+
+	</div>
+	<center>
+
+	<div class="index-box">
+		
+		
+	</div>
+
+		<div class = "post-list">
+			<table>
+			 <tr>
+			   <th>Post</th>
+			   <th>category</th>
+			 </tr>
+
+			 <% @posts.each do |post| %>
+			   <tr>
+			     <td><%= link_to post.postText, post_path(post)%></td>
+			     <td><%= post.category %></td>
+			     
+			   </tr>
+			 <% end %>
+			</table>
+		</div>
+	</center>
+	
+
+</body>

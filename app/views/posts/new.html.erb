@@ -1,0 +1,15 @@
+<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+    <p>
+      <%= form.label :post %><br>
+      <%= form.text_field :postText %>
+    </p>
+   
+    <p>
+      <%= form.label :category %><br>
+      <%= form.text_area :category %>
+    </p>
+   
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>

@@ -1,0 +1,35 @@
+<center>
+	
+	<% @list1.each_with_index do |list, index| %>
+
+	<div class = "mainbox">
+		<div class = "box0">
+			<div class = "rank"><h2> <%= index +1 %>.</h2></div>
+			<div><h2><%= list.name %></h2></div>
+			
+		</div>
+		<div class="box1">
+			<div class="box1-1">
+				<div class = "image" ><img ><%=image_tag alt = "https://i.imgur.com/9mEWvlz.jpg"%></img></div>				
+			</div>
+			<div class="box1-2">
+				<div class="voteValues">
+					<div class = "upValue" id = "upvote<%="#{list.id}"%>"  ><%= list.upvotes %></div>
+		        	<div class = "downValue" id = "downvote<%="#{list.id}"%>"  ><%= list.downvotes %></div>
+				</div>
+				<div class="voteButton" id="vote1">
+					<div id = "upvote" class="upButton"  ><button id="<%="#{list.id}"%>"><i class="fa fa-thumbs-o-up fa-3x"></i></button></div>
+		        	<div id = "downvote" class="downButton"  ><button id="<%="#{list.id}"%>" ><i class="fa fa-thumbs-o-down fa-3x" aria-hidden="true"></i></button></div>
+				</div>
+			</div>
+			
+		</div>
+		<hr>
+		<div class="box2">
+			<%= list.aboutText %>
+		</div>
+	</div>
+	<br>
+	<% end %>
+
+</center>

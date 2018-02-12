@@ -1,0 +1,24 @@
+<%= form_with(model: [ @post, @post.lists.build ], local: true) do |form| %>
+    <p>
+      <%= form.label :Name %><br>
+      <%= form.text_field :name %>
+    </p>
+    <p>
+      <%= form.label :About %><br>
+      <%= form.text_area :aboutText %>
+    </p>
+    <p>
+    <%= form.label :photolink %><br>
+    <%= form.text_area :photolink %>
+  </p>
+  <p>
+  <%= form.label :Implink %><br>
+  <%= form.text_area :link %>
+  </p>
+  
+  
+  
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>
