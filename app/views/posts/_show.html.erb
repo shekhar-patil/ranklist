@@ -15,11 +15,15 @@
 			<div class="box1-2">
 				<div class="voteValues">
 					<div class = "upValue" id = "upvote<%="#{list.id}"%>"  ><%= list.upvotes %></div>
-		        	<div class = "downValue" id = "downvote<%="#{list.id}"%>"  ><%= list.downvotes %></div>
+		        	<div class = "downValue" id = "downvote<%="#{list.id}"%>"><%= list.downvotes %></div>
 				</div>
 				<div class="voteButton" id="vote1">
-					<div id = "upvote" class="upButton"  ><button id="<%="#{list.id}"%>"><i class="fa fa-thumbs-o-up fa-3x"></i></button></div>
-		        	<div id = "downvote" class="downButton"  ><button id="<%="#{list.id}"%>" ><i class="fa fa-thumbs-o-down fa-3x" aria-hidden="true"></i></button></div>
+					<div id = "upvote" class="upButton">
+						<button id="<%="#{list.id}"%>" class="vote"><i class="fa fa-thumbs-o-up fa-3x"></i></button>
+					</div>
+		        	<div id = "downvote" class="downButton">
+		        		<button id="<%="#{list.id}"%>" class="vote"><i class="fa fa-thumbs-o-down fa-3x" aria-hidden="true"></i></button>
+		        	</div>
 				</div>
 			</div>
 			

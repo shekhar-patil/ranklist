@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+	skip_before_action :verify_authenticity_token
 	def create
 	    @post = Post.find(params[:post_id])
 	    @comment = @post.comments.create(comment_params)
