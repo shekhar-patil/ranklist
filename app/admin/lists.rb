@@ -12,7 +12,7 @@ ActiveAdmin.register List do
 #   permitted
 # end
 
-    permit_params :name, :aboutText, :photolink, :link, :upvotes, :downvotes
+    permit_params :post_id, :name, :aboutText, :photolink, :link, :upvotes, :downvotes
 
 
 end

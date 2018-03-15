@@ -34,6 +34,6 @@ class PostsController < ApplicationController
        
       private
         def post_params
-          params.require(:post).permit(:postText, :category)
+          params.require(:post).permit(:post_id,:postText, :category)
         end
 end
