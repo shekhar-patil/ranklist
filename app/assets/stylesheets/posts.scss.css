@@ -1,5 +1,3 @@
-
-
 .mainbox{
     
     background: #fcfcfc;
@@ -76,9 +74,18 @@ table{
     }
     .image img{
         padding: 0.2em;
-        max-width: 50%;
+        width: 30vh;
+        height: 50vh;
         border-radius: 30% 30% 30% 30%;
         height: auto;
+    }
+    .upValue{
+        margin: 5px;
+        margin-right: 28px;
+    }
+    .downValue{
+        padding: 5px;
+        margin-left: 20px;
     }
 }
 

@@ -10,12 +10,12 @@
 		</div>
 		<div class="box1">
 			<div class="box1-1">
-				<div class = "image" ><img ><%=image_tag alt = "https://i.imgur.com/9mEWvlz.jpg"%></img></div>				
+				<div class = "image" ><img ><%=image_tag (list.photolink)%></img></div>				
 			</div>
 			<div class="box1-2">
 				<div class="voteValues">
-					<div class = "upValue" id = "upvote<%="#{list.id}"%>"  ><%= list.upvotes %></div>
-		        	<div class = "downValue" id = "downvote<%="#{list.id}"%>"><%= list.downvotes %></div>
+					<div class = "upValue" id = "upvote<%="#{list.id}"%>"><h3><%= list.upvotes %></h3></div>
+		        	<div class = "downValue" id = "downvote<%="#{list.id}"%>"><h3><%= list.downvotes %></h3></div>
 				</div>
 				<div class="voteButton" id="vote1">
 					<div id = "upvote" class="upButton">
