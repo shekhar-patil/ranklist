@@ -195,7 +195,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (12.3.0)
+    rake (12.3.2)
     ransack (1.8.7)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
@@ -296,7 +296,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.0
+   1.17.3

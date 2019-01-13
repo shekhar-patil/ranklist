@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20180218072251) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter", default: "Anonymous"
     t.text "body", null: false
-    t.integer "post_id"
+    t.bigint "post_id"
     t.integer "like", default: 0, null: false
     t.integer "dislike", default: 0, null: false
     t.datetime "created_at", null: false
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180218072251) do
     t.text "link"
     t.integer "upvotes", default: 0, null: false
     t.integer "downvotes", default: 0, null: false
-    t.integer "post_id"
+    t.bigint "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_lists_on_post_id"
@@ -77,4 +77,6 @@ ActiveRecord::Schema.define(version: 20180218072251) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "lists", "posts"
 end
