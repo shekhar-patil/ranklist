@@ -20,7 +20,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'activeadmin'
 
 # Plus integrations with:
 gem 'devise'
